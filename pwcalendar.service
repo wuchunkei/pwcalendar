@@ -1,0 +1,13 @@
+[Unit]
+Description=PWCalendar Application
+After=network.target
+
+[Service]
+Type=simple
+User=<用戶名>
+WorkingDirectory=/home/<用戶名>/pwcalendar
+ExecStart=/usr/bin/node server.js
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
