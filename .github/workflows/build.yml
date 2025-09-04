@@ -21,6 +21,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm ci --legacy-peer-deps
+    - run: npm install --legacy-peer-deps
     - run: npm run build
     - run: npx tsc --project tsconfig.server.json
