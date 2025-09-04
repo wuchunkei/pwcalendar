@@ -33,7 +33,8 @@ jobs:
         cp -r dist deploy/
         cp package.json deploy/
         cp package-lock.json deploy/
-        cp pwcalendar.service deploy/
+-       cp pwcalendar.service deploy/
++       sed "s/<用戶名>/${{ secrets.USERNAME }}/g" pwcalendar.service > deploy/pwcalendar.service
         cp .env.example deploy/
         
     - name: Deploy to server
